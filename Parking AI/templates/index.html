@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>YOLO Park Test</title>
+  </head>
+  <body>
+    <h1>YOLO Park Test</h1>
+
+    <form action="/detect" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" accept="image/*" />
+      <input type="submit" value="Upload Image" />
+    </form>
+
+    {% if error %}
+    <p style="color: red">Error: {{ error }}</p>
+
+    {% endif %} {% if text_output %}
+
+    <h2>Extracted Text:</h2>
+    <p>{{text_output}}</p>
+
+    {% endif %}
+  </body>
+</html>
